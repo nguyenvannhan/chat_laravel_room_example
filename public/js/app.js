@@ -14255,6 +14255,12 @@ var app = new Vue({
 
         Echo.join('chatroom').here(function (users) {
             _this.usersInRoom = users;
+        }).joining(function (user) {
+            _this.usersInRoom.push(user);
+        }).leaving(function (user) {
+            _this.usersInRoom = _this.usersInRoom.filter(function (u) {
+                return u != user;
+            });
         }).listen('MessagePosted', function (e) {
             console.log(e);
             _this.messages.push({

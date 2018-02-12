@@ -6,14 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Chat Room</title>
+    <title>
+        Chat Room
+    </title>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div id="app">
 
-        <h1>Chat Room</h1>
+        <h1>
+            Chat Room
+            <span class="badge float-right">@{{ usersInRoom.length }}</span>
+        </h1>
         <chat-log :messages="messages"></chat-log>
         <chat-composer @messagesent="addMessage"></chat-composer>
     </div>
