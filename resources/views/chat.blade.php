@@ -8,16 +8,16 @@
 
     <title>Chat Room</title>
 
-    <link href="{{ asset('css/app.css') }}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div id="app">
+
         <h1>Chat Room</h1>
-        <chat-message></chat-message>
-        <chat-log></chat-log>
-        <chat-composer></chat-composer>
+        <chat-log :messages="messages"></chat-log>
+        <chat-composer @messagesent="addMessage"></chat-composer>
     </div>
 
-    <script src="{{ asset('js/app.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/app.js')}}"></script>
 </body>
 </html>
